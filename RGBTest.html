@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SampleColorTubeExercise</title>
+</head>
+<body>
+<script language="JavaScript">
+    var hex=new Array(6);
+    hex[0]='FF';
+    hex[1]='CC';
+    hex[2]='99';
+    hex[3]='66';
+    hex[4]='33';
+    hex[5]='00';
+
+    function drawCell(red,green,blue) {
+        document.write('<td bgcolor="#' + red + green+ blue+ '">colorTest');
+        document.write('</td>');
+    }
+    function drawRow(red,blue) {
+        document.write('<tr>');
+        for(var i=0;i<6;++i){
+            drawCell(red,hex[i],blue)
+        }
+        document.write('</tr>')
+    }
+    function drawTable(blue) {
+        document.write('<table cellpadding="0" cellspacing="0" border="0">')
+        for(var i=0;i<6;++i){
+            drawRow(hex[i],blue)
+        }
+        document.write('</table>')
+        
+    }
+    function drawCube() {
+        document.write('<table cellpadding="5" cellspacing="0" border="1">');
+        for(var i=0;i<6;i++){
+            document.write('<td bgcolor="#ffffff">');
+            drawTable(hex[i]);
+            document.write('</td>');
+        }
+
+        document.write('</table>');
+
+    }
+
+    drawCube();
+
+</script>
+</body>
+</html>
